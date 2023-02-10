@@ -1,0 +1,112 @@
+body {
+  background-color: rgba(252, 216, 16, 0.897);
+}
+
+.bg1 {
+  float: left;
+  padding-left: 20px;
+  width: 20%;
+}
+#type-writer {
+  margin-left: 30px;
+  float: left;
+  width: 75%;
+  margin-top: 8%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-style: bold;
+  font-size: 100px;
+  color: black;
+  overflow: hidden;
+  border-right: 0.15em solid black;
+  white-space: nowrap;
+  animation: type-writer 3s steps(30, end), blink-caret 1s step-end infinite;
+}
+
+@keyframes type-writer {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(2, 2, 2);
+  }
+}
+.mainp {
+  padding-top: 30%;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px 1px;
+  color: rgb(8, 8, 8);
+  font-size: 100px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-style: bold;
+}
+.para {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.para::before,
+.para::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+.para::before {
+  background-color: rgb(7, 7, 7);
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.para::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+  color: rgb(5, 5, 5);
+}
+
+.para:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+.para:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.para span {
+  display: inline-block;
+  transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.para:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+.para {
+  text-decoration: none;
+  color: rgb(10, 10, 10);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: bold;
+  vertical-align: top;
+}
+.hidden {
+  font-size: 40px;
+  color: rgba(252, 216, 16, 0.897);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+}

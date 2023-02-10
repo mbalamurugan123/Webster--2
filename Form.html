@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="form.css" />
+  <body>
+    <div id="header" style="position: fixed">
+      <div id="a">
+        <h1>DETAILS</h1>
+      </div>
+      <div id="b">
+        <img src="./images/I.png" alt="Italian Trulli" />
+      </div>
+    </div>
+    <button id="y" onclick="scrollWin()" style="position: fixed">
+      &#8595;
+    </button>
+    <button id="z" onclick="scrollWin1()" style="position: fixed">
+      &#8593;
+    </button>
+    <a id="w" href="Form2.html" style="position: fixed">Next</a>
+    <div id="plw">
+      <form action="test.php" method="post" id="form">
+        <label for="username">Name:</label><br />
+        <input type="text" name="username" id="Username" required />
+      </form>
+      <br />
+      <form id="form">
+        <label for="Description">Address : </label><br />
+        <textarea
+          rows="5"
+          cols="50"
+          name="Description"
+          id="Description"
+        ></textarea>
+      </form>
+      <br />
+      <form action="">
+        <label for="phone">Enter your phone number:</label><br />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+        /><br />
+      </form>
+      <br />
+      <form action="" id="form">
+        <label for="email">Email Address : </label><br />
+        <input type="email" id="email" name="email" />
+      </form>
+    </div>
+  </body>
+  <script>
+    function scrollWin() {
+      window.scrollBy(0, 1000);
+    }
+    function scrollWin1() {
+      window.scrollBy(0, -1000);
+    }
+  </script>
+</html>
